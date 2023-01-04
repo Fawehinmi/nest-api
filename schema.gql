@@ -1,0 +1,51 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Auth {
+  userId: String!
+  name: String!
+  token: String!
+  phoneNumber: String!
+}
+
+type Product {
+  _id: ID!
+  name: String
+  detail: String
+  price: Float
+  quantity: Float
+  category: String
+  categoryId: ID
+  createdAt: Float
+  updatedAt: Float
+}
+
+type Query {
+  hello: String!
+  productDetail(id: String!): Product!
+  findProductById(id: String!): Product!
+}
+
+type Mutation {
+  signIn(email: String!, password: String!): Auth!
+  createProduct(product: CreateProductInput!): Product!
+  updateProduct(id: String!, product: UpdateProductInput!): Product!
+  deleteProduct(id: String!): Boolean!
+}
+
+input CreateProductInput {
+  name: String
+  detail: String
+  price: Float
+  quantity: Float
+  categoryId: ID
+}
+
+input UpdateProductInput {
+  name: String
+  detail: String
+  price: Float
+  quantity: Float
+  categoryId: ID
+}
